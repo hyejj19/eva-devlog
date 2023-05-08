@@ -1,3 +1,9 @@
+import Layout from '../components/Layout';
+
 export default function Home() {
-  return <main>Notion Blog Test</main>;
+  return (
+    <Layout>
+      <section>내용</section>
+    </Layout>
+  );
 }
