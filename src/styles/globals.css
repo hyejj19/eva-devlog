@@ -13,6 +13,10 @@ html {
     @apply text-xl font-bold mb-10;
   }
 
+  .title {
+    @apply text-xl md:text-3xl mb-3;
+  }
+
   .hover-text {
     @apply hover:text-main-orange cursor-pointer transition-colors;
   }

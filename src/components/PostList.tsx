@@ -27,7 +27,7 @@ export default function PostList() {
         </Link>
       </div>
 
-      <div className="w-full flex flex-col space-y-7 mb-16">
+      <div className="w-full flex flex-col space-y-7">
         {[1, 2, 3, 4, 5].map((item) => (
           <PostListItem key={item} />
         ))}

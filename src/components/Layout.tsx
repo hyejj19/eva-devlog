@@ -6,7 +6,7 @@ export default function Layout({ children }) {
       <section className="flex flex-col items-center h-full w-full max-w-[900px]">
         <Header />
         {children}
-        <footer className="h-[100px] flex justify-center items-center text-sm text-gray-600 border-t w-full">
+        <footer className="h-[100px] flex justify-center items-center text-sm text-gray-600 border-t w-full mt-16">
           Copyright ⓒ 2023 parkhyejung All rights reserved.
         </footer>
       </section>
