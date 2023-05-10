@@ -1,7 +1,10 @@
 export default function Header() {
   return (
-    <header className="bg-gray-300 flex w-full justify-between px-2 pt-5 pb-2">
-      <div>블로그 아이콘</div>
+    <header className="flex w-full justify-between pt-5 pb-2 h-[80px] items-end">
+      <div>
+        <span className="text-3xl font-bold">Develog</span>
+        <span className="text-3xl font-bold text-main-orange">.</span>
+      </div>
       <nav className="flex space-x-3">
         <div>home</div>
         <div>posts</div>

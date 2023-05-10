@@ -9,12 +9,13 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      '2xl': '1536px',
+    extend: {
+      colors: {
+        'main-orange': '#EB6440',
+        'main-teal': '#497174',
+        'medium-teal': '#D6E4E5',
+        'light-teal': '#EFF5F5',
+      },
     },
   },
   plugins: [],
