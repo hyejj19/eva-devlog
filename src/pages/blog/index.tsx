@@ -41,10 +41,12 @@ import TagList from '../../components/TagList';
 export default function PostsPage() {
   return (
     <Layout>
-      <ContentLayout>
-        <TagList />
-        <PostList />
-      </ContentLayout>
+      <section className="mt-16">
+        <ContentLayout>
+          <TagList />
+          <PostList />
+        </ContentLayout>
+      </section>
     </Layout>
   );
 }
