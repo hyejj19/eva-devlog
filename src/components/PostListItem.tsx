@@ -2,7 +2,7 @@
 
 export default function PostListItem() {
   return (
-    <div className="w-full flex p-2 hover:bg-light-teal hover:transition-colors rounded-md items-center">
+    <div className="w-full flex p-2 hover:bg-light-teal hover:transition-colors rounded-md items-center cursor-pointer">
       <span className="text-base md:text-lg">
         Next.js 와 Notion API를 활용해 블로그를 만들어 보았습니다.
       </span>

@@ -2,13 +2,13 @@ export default function TagList() {
   return (
     <article className="w-[280px] h-full">
       <h2 className="subtitle">Tags</h2>
-      <ul className="space-y-2 text-sm">
-        <li>React (1)</li>
-        <li>Next.js (1)</li>
-        <li>Express (1)</li>
-        <li>Algorithm (1)</li>
-        <li>Computer Science (1)</li>
-        <li>Essay (1)</li>
+      <ul className="space-y-2 text-sm pt-2">
+        <li className="hover-text">React (1)</li>
+        <li className="hover-text">Next.js (1)</li>
+        <li className="hover-text">Express (1)</li>
+        <li className="hover-text">Algorithm (1)</li>
+        <li className="hover-text">Computer Science (1)</li>
+        <li className="hover-text">Essay (1)</li>
       </ul>
     </article>
   );

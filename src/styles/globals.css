@@ -12,4 +12,8 @@ html {
   .subtitle {
     @apply text-xl font-bold mb-10;
   }
+
+  .hover-text {
+    @apply hover:text-main-orange cursor-pointer transition-colors;
+  }
 }
