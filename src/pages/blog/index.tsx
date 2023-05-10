@@ -1,3 +1,4 @@
+// TODO: Notion API와 연동
 // import { getPosts } from '../../libs/notion';
 // import { NextPage } from 'next';
 // import Link from 'next/link';
@@ -41,7 +42,7 @@ import TagList from '../../components/TagList';
 export default function PostsPage() {
   return (
     <Layout>
-      <section className="mt-16">
+      <section className="mt-16 w-full">
         <ContentLayout>
           <TagList />
           <PostList />
