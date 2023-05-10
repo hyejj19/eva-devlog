@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Intro() {
   return (
@@ -18,9 +19,11 @@ export default function Intro() {
           <p>공부하고 느낀 것을 블로그에 기록하고 있어요.</p>
         </div>
         <div className="ml-auto hidden md:block">
-          <span className="text-xs text-gray-600 hover-text">
-            이전 블로그 방문하기
-          </span>
+          <Link href={'https://friedegg556.tistory.com/'} target="_blank">
+            <span className="text-xs text-gray-600 hover-text">
+              이전 블로그 방문하기
+            </span>
+          </Link>
         </div>
       </article>
     </section>
