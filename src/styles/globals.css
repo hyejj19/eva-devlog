@@ -17,6 +17,10 @@ html {
     @apply text-xl md:text-3xl mb-3;
   }
 
+  .container {
+    @apply w-full mt-16;
+  }
+
   .hover-text {
     @apply hover:text-main-orange cursor-pointer transition-colors;
   }
