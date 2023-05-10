@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header
       className={`flex w-full justify-between pt-5 pb-2 h-[80px] px-4 lg:px-0 items-end bg-white fixed max-w-[900px] transition-all border-b border-b-1 border-transparent ${
-        scrollPosition > 50 && 'border-gray-200'
+        scrollPosition > 50 && 'border-light-teal'
       }`}>
       <Link href={'/'}>
         <div className="cursor-pointer text-3xl font-bold">

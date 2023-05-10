@@ -5,7 +5,7 @@ export default function PostContent() {
         <h1 className="title">
           Next.js와 Notion API를 활용해 블로그를 만들어 보았습니다.
         </h1>
-        <div className="flex flex-col w-full text-main-teal items-end space-y-2">
+        <div className="flex flex-col w-full text-main-teal items-end space-y-2 mt-2">
           <span className="text-xs"># React</span>
           <span className="text-xs">2023.04.26</span>
         </div>
