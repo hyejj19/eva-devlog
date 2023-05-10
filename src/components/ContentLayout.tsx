@@ -1,11 +1,7 @@
-import PostList from './PostList';
-import TagList from './TagList';
-
-export default function ContentLayout() {
+export default function ContentLayout({ children }) {
   return (
-    <section className="flex w-full h-full justify-between">
-      <TagList />
-      <PostList />
+    <section className="flex w-full h-full justify-between pt-20">
+      {children}
     </section>
   );
 }

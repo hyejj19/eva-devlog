@@ -2,14 +2,14 @@ import Image from 'next/image';
 
 export default function Intro() {
   return (
-    <section className="w-full flex items-center py-20">
+    <section className="w-full flex items-center pt-20">
       <article className="flex items-end w-full">
         <Image
           src="/profile_develog.png"
           width={120}
           height={120}
           alt="프로필 이미지"
-          className="shrink-0 mr-5"
+          className="shrink-0 mr-7"
         />
         <div className="max-w-[400px] space-y-2">
           <p className="font-bold text-xl">안녕하세요!🖐️</p>
