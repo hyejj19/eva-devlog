@@ -28,6 +28,6 @@
   }
 
   .hover-text {
-    @apply hover:text-main-orange cursor-pointer transition-colors dark:hover:text-main-orange;
+    @apply hover:text-main-orange cursor-pointer dark:hover:text-main-orange;
   }
 }
