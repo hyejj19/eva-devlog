@@ -1,8 +1,10 @@
+'use client';
+
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 export default function PostListItem() {
-  const { pathname } = useRouter();
+  const pathname = usePathname();
 
   return (
     <Link href={'/blog/1'}>

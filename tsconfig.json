@@ -2,11 +2,7 @@
   "compilerOptions": {
     "jsx": "preserve", // tsx -> jsx 어떻게 컴파일 할건지
     "target": "es6", // 컴파일 될 js 버전
-    "lib": [
-      "es2015",
-      "dom",
-      "dom.iterable"
-    ], // 컴파일에 포함할 라이브러리
+    "lib": ["es2015", "dom", "dom.iterable"], // 컴파일에 포함할 라이브러리
     "module": "commonJS", // 모듈 import에서 어떤 문법을 쓸지 (requier or import)
     "allowJs": true, // js 코드 허용
     "esModuleInterop": true, // require 문법과 import 문법 호환
@@ -18,14 +14,20 @@
     "noEmit": true,
     "incremental": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
   },
+  "baseUrl": ".",
   "include": [
     "./tailwind.config.json",
-    "src/**/*"
+    "app/**/*",
+    "src/**/*",
+    ".next/types/**/*.ts"
   ], // ts 적용할 경로
-  "exclude": [
-    "node_modules",
-    "src/router"
-  ] // ts 적용하지 않을 폴더
+  "exclude": ["node_modules", "src/router"] // ts 적용하지 않을 폴더
 }

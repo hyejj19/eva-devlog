@@ -1,3 +1,5 @@
+'use client';
+
 export default function PostContent() {
   return (
     <article className="w-full h-full">
