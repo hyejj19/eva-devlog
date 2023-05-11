@@ -42,7 +42,7 @@ import TagList from '../../components/TagList';
 export default function PostsPage() {
   return (
     <Layout>
-      <section className="mt-16 w-full">
+      <section className="container">
         <ContentLayout>
           <TagList />
           <PostList />

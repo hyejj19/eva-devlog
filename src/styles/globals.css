@@ -4,8 +4,10 @@
 
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-html {
-  font-family: 'Pretendard';
+@layer base {
+  body {
+    @apply dark:bg-deep-gray dark:text-white dark:border-white;
+  }
 }
 
 @layer components {
@@ -17,7 +19,15 @@ html {
     @apply text-xl md:text-3xl mb-3;
   }
 
+  .small-text {
+    @apply text-xs text-main-teal dark:text-inherit;
+  }
+
+  .container {
+    @apply w-full mt-16;
+  }
+
   .hover-text {
-    @apply hover:text-main-orange cursor-pointer transition-colors;
+    @apply hover:text-main-orange cursor-pointer dark:hover:text-main-orange;
   }
 }

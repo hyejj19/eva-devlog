@@ -20,14 +20,14 @@ export default function PostList() {
 
         <Link href="/blog">
           {pathname === '/' && (
-            <span className="text-main-orange text-sm md:text-base cursor-pointer hover:text-main-teal transition-colors">
+            <span className="text-main-orange text-sm md:text-base cursor-pointer hover:text-main-teal dark:hover:text-white transition-colors">
               더 보기
             </span>
           )}
         </Link>
       </div>
 
-      <div className="w-full flex flex-col space-y-6">
+      <div className="w-full flex flex-col space-y-2">
         {[1, 2, 3, 4, 5].map((item) => (
           <PostListItem key={item} />
         ))}
