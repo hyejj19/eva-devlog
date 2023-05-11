@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDarkMode } from '../hooks/useDarkmode';
 
 // TODO: isDarkMode 의 초기 상태값 기억하여 토글 스위치 온오프 결정하기
-// FIXME: dark 클래스 추가되었는데 darkmode 안되는 원인 찾아서 해결하기
+
 export default function DarkmodeToggle() {
   const { isDarkMode, setIsDarkMode } = useDarkMode();
 
@@ -34,12 +34,17 @@ export default function DarkmodeToggle() {
         </svg>
 
         <label className="inline-flex relative items-center cursor-pointer">
-          <input type="checkbox" className="sr-only peer" readOnly />
+          <input
+            type="checkbox"
+            className={`sr-only peer`}
+            checked={isDarkMode}
+            readOnly
+          />
           <div
             onClick={() => {
               setIsDarkMode(!isDarkMode);
             }}
-            className="w-10 h-6 bg-gray-200 rounded-full peer  peer-focus:ring-green-300  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-main-orange"
+            className="w-10 h-6 bg-gray-200 rounded-full peer  peer-focus:ring-green-300  peer-checked:after:translate-x-full peer-checked:after:border-white peer-checked:bg-main-orange after:content-[''] after:absolute after:top-1 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all "
           />
         </label>
 
