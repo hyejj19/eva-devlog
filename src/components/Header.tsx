@@ -14,12 +14,13 @@ export default function Header() {
 
   return (
     <header
-      className={`flex w-full justify-between pt-5 pb-2 h-[80px] px-4 lg:px-0 items-end bg-white fixed max-w-[900px] transition-all border-b border-b-1 border-transparent ${
-        scrollPosition > 50 && 'border-gray-200'
+      className={`flex w-full justify-between pt-5 pb-2 h-[80px] px-4 lg:px-0 items-end fixed max-w-[900px] bg-white dark:bg-deep-gray ${
+        scrollPosition > 40 &&
+        'bg-opacity-80 dark:bg-opacity-80 backdrop-blur-sm'
       }`}>
       <Link href={'/'}>
         <div className="cursor-pointer text-3xl font-bold">
-          <span className="hover:text-main-orange transition-colors">
+          <span className="hover:text-main-orange hover:transition-colors">
             Develog
           </span>
           <span className="text-main-orange">.</span>

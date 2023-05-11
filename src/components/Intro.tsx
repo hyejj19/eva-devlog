@@ -19,7 +19,7 @@ export default function Intro() {
         </div>
         <div className="ml-auto hidden md:block">
           <Link href={'https://friedegg556.tistory.com/'} target="_blank">
-            <span className="text-xs text-gray-600 hover-text">
+            <span className="text-xs text-gray-600 dark:text-gray-300 hover-text">
               이전 블로그 방문하기
             </span>
           </Link>

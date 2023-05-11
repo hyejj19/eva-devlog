@@ -6,22 +6,22 @@ export default function PostListItem() {
 
   return (
     <Link href={'/blog/1'}>
-      <div className="w-full flex p-2 hover:bg-light-teal hover:transition-colors rounded-md items-center cursor-pointer">
+      <div className="w-full flex py-3 px-2 hover:bg-light-teal dark:hover:text-main-teal hover:transition-colors rounded-md items-center cursor-pointer">
         {pathname === '/' ? (
           <>
             <span className="text-base">
               Next.js 와 Notion API를 활용해 블로그를 만들어 보았습니다.
             </span>
-            <span className="hidden text-xs sm:block ml-auto text-main-teal">
+            <span className="hidden sm:block ml-auto small-text">
               2023.04.26
             </span>
           </>
         ) : (
           <>
-            <div className="w-full flex flex-col space-y-5">
-              <div className="flex w-full justify-between text-main-teal">
-                <span className="text-xs"># React</span>
-                <span className="text-xs hidden sm:block">2023.04.26</span>
+            <div className="w-full flex flex-col space-y-3">
+              <div className="flex w-full justify-between small-text">
+                <span># React</span>
+                <span className="hidden sm:block">2023.04.26</span>
               </div>
               <span className="text-base">
                 Next.js 와 Notion API를 활용해 블로그를 만들어 보았습니다.
