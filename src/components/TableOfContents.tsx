@@ -1,4 +1,4 @@
-// TODO : 본문 컨텐츠와 연동되도록 구현
+// TODO: 본문 컨텐츠와 연동되도록 구현
 'use client';
 
 export default function TableOfContents() {
