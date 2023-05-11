@@ -12,7 +12,7 @@ export default function PostListItem() {
             <span className="text-base">
               Next.js 와 Notion API를 활용해 블로그를 만들어 보았습니다.
             </span>
-            <span className="hidden text-xs md:block ml-auto text-main-teal">
+            <span className="hidden text-xs sm:block ml-auto text-main-teal">
               2023.04.26
             </span>
           </>
@@ -21,7 +21,7 @@ export default function PostListItem() {
             <div className="w-full flex flex-col space-y-5">
               <div className="flex w-full justify-between text-main-teal">
                 <span className="text-xs"># React</span>
-                <span className="text-xs hidden md:block">2023.04.26</span>
+                <span className="text-xs hidden sm:block">2023.04.26</span>
               </div>
               <span className="text-base">
                 Next.js 와 Notion API를 활용해 블로그를 만들어 보았습니다.

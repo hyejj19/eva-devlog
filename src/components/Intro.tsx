@@ -11,7 +11,6 @@ export default function Intro() {
           height={120}
           alt="프로필 이미지"
           className="shrink-0 mr-7"
-          priority
         />
         <div className="max-w-[400px] space-y-2 text-sm md:text-base">
           <p className="font-bold text-xl">안녕하세요!🖐️</p>

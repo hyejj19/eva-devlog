@@ -1,6 +1,6 @@
 export default function TagList() {
   return (
-    <article className="w-[280px] h-full">
+    <article className="w-[280px] h-full hidden md:block">
       <h2 className="subtitle">Tags</h2>
       <ul className="space-y-2 text-sm pt-2">
         <li className="hover-text">React (1)</li>
