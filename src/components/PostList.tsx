@@ -26,7 +26,7 @@ export default function PostList({ postInfos }: PostListProps) {
           <h2 className="subtitle">All</h2>
         )}
 
-        <Link href="/blog">
+        <Link href="/posts">
           {pathname === '/' && (
             <span className="text-main-orange text-sm md:text-base cursor-pointer hover:text-main-teal dark:hover:text-white transition-colors">
               더 보기
