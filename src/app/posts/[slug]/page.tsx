@@ -2,9 +2,9 @@
 // import { GetStaticPropsContext, NextPage } from 'next';
 
 import React from 'react';
-import ContentLayout from '../../../src/components/ContentLayout';
-import TableOfContents from '../../../src/components/TableOfContents';
-import PostContent from '../../../src/components/PostContent';
+import ContentLayout from '../../../components/ContentLayout';
+import TableOfContents from '../../../components/TableOfContents';
+import PostContent from '../../../components/PostContent';
 // import ContentLayout from '../../components/ContentLayout';
 // import Layout from '../../components/Layout';
 // import PostContent from '../../components/PostContent';
