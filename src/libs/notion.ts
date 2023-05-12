@@ -15,6 +15,8 @@ const checkEnvironment = () => {
 
 const notionClient = new Client({ auth: process.env.NEXT_PUBLIC_NOTION_KEY });
 
+// TODO: 캐시, revalidation 옵션 등 추가 셋팅
+
 // 블로그 목록 가져오기
 export const getPosts = async () => {
   const response = await fetch(checkEnvironment().concat('/api/posts'));

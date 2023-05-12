@@ -3,14 +3,17 @@ import ContentLayout from '../components/ContentLayout';
 import Intro from '../components/Intro';
 import PostList from '../components/PostList';
 import TagList from '../components/TagList';
+import { getPosts } from '../libs/notion';
 
-export default function Page() {
+export default async function Page() {
+  const postInfos = await getPosts();
+
   return (
     <>
       <Intro />
       <ContentLayout>
         <TagList />
-        {/* <PostList /> */}
+        <PostList postInfos={postInfos} />
       </ContentLayout>
     </>
   );

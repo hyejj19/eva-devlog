@@ -7,17 +7,18 @@
 import Link from 'next/link';
 import PostListItem from './PostListItem';
 import { usePathname } from 'next/navigation';
+import { NextApiPostInfoResp } from '../types/NextApiTypes';
 
 type PostListProps = {
-  posts: any;
+  postInfos: NextApiPostInfoResp[];
 };
 
-export default function PostList({ posts }: PostListProps) {
+export default function PostList({ postInfos }: PostListProps) {
   const pathname = usePathname();
-  console.log(posts);
 
   return (
     <article className="w-full h-full">
+      {/* 최근글 || All && 더보기 */}
       <div className="flex justify-between items-baseline px-2">
         {pathname === '/' ? (
           <h2 className="subtitle">최근 글</h2>
@@ -25,7 +26,7 @@ export default function PostList({ posts }: PostListProps) {
           <h2 className="subtitle">All</h2>
         )}
 
-        <Link href="/blog">
+        <Link href="/posts">
           {pathname === '/' && (
             <span className="text-main-orange text-sm md:text-base cursor-pointer hover:text-main-teal dark:hover:text-white transition-colors">
               더 보기
@@ -35,8 +36,8 @@ export default function PostList({ posts }: PostListProps) {
       </div>
 
       <div className="w-full flex flex-col space-y-2">
-        {[1, 2, 3, 4, 5].map((item) => (
-          <PostListItem key={item} />
+        {postInfos.map((info) => (
+          <PostListItem key={info.id} info={info} />
         ))}
       </div>
     </article>
