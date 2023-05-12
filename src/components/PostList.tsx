@@ -8,8 +8,13 @@ import Link from 'next/link';
 import PostListItem from './PostListItem';
 import { usePathname } from 'next/navigation';
 
-export default function PostList() {
+type PostListProps = {
+  posts: any;
+};
+
+export default function PostList({ posts }: PostListProps) {
   const pathname = usePathname();
+  console.log(posts);
 
   return (
     <article className="w-full h-full">
