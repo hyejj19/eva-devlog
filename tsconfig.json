@@ -25,9 +25,9 @@
   "baseUrl": ".",
   "include": [
     "./tailwind.config.json",
-    "app/**/*",
     "src/**/*",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "app/api"
   ], // ts 적용할 경로
   "exclude": ["node_modules", "src/router"] // ts 적용하지 않을 폴더
 }
