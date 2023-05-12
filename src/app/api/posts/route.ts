@@ -27,9 +27,11 @@ export async function GET() {
 
   const postsInfo: NextApiPostInfoResp[] = results.map((res: PostResp) => {
     return {
+      id: res.id,
       tags: res.properties.Tags.multi_select[0].name,
       title: res.properties.title.title[0].text.content,
       createdAt: res.created_time,
+      slug: res.properties.slug.rich_text[0].text.content,
     };
   });
 
