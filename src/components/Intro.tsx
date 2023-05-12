@@ -5,16 +5,17 @@ export default function Intro() {
   return (
     <section className="w-full flex items-center mt-32">
       <article className="flex items-end w-full">
-        <div className="mr-5 w-20 h-20 sm:w-[120px] sm:h-[120px]">
-          <Image
-            src="/profile_develog.png"
-            alt="프로필 이미지"
-            width={120}
-            height={120}
-            priority
-            quality={100}
-          />
-        </div>
+        <Image
+          src="/profile_develog.png"
+          alt="프로필 이미지"
+          width="120"
+          height="120"
+          priority
+          quality={100}
+          placeholder="blur"
+          blurDataURL={'/profile_develog.png'}
+          className="mr-5 w-20 h-20 sm:w-[120px] sm:h-[120px]"
+        />
 
         <div className="max-w-[400px] text-sm sm:text-base">
           <p className="font-bold text-lg sm:text-xl mb-2 sm:mb-3">

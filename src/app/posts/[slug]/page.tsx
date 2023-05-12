@@ -1,10 +1,14 @@
 // import { getPost, getPostContent, getPosts } from '../../libs/notion';
 // import { GetStaticPropsContext, NextPage } from 'next';
 
-import ContentLayout from '../../components/ContentLayout';
-import Layout from '../../components/Layout';
-import PostContent from '../../components/PostContent';
-import TableOfContents from '../../components/TableOfContents';
+import React from 'react';
+import ContentLayout from '../../../components/ContentLayout';
+import TableOfContents from '../../../components/TableOfContents';
+import PostContent from '../../../components/PostContent';
+// import ContentLayout from '../../components/ContentLayout';
+// import Layout from '../../components/Layout';
+// import PostContent from '../../components/PostContent';
+// import TableOfContents from '../../components/TableOfContents';
 
 // type NotionPageProps = {
 //   postId: any;
@@ -73,13 +77,11 @@ import TableOfContents from '../../components/TableOfContents';
 
 export default function PostPage() {
   return (
-    <Layout>
-      <section className="mt-16 w-full">
-        <ContentLayout>
-          <TableOfContents />
-          <PostContent />
-        </ContentLayout>
-      </section>
-    </Layout>
+    <section className="mt-16 w-full">
+      <ContentLayout>
+        <TableOfContents />
+        <PostContent />
+      </ContentLayout>
+    </section>
   );
 }

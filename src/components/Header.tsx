@@ -1,8 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import DarkmodeToggle from './DarkmodeToggle';
 
-// TODO: 다크모드 컴포넌트 토글 만들기
 export default function Header() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const updateScroll = () => {

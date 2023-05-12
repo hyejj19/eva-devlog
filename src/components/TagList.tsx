@@ -1,3 +1,5 @@
+'use client';
+
 export default function TagList() {
   return (
     <article className="w-[280px] h-full hidden md:block">

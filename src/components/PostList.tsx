@@ -2,12 +2,19 @@
 // TODO: list 페이지인 경우 무한 스크롤 구현하기
 // TODO: 검색한 Tags 별로 subtitle 내용 변경하기
 
+'use client';
+
 import Link from 'next/link';
 import PostListItem from './PostListItem';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
-export default function PostList() {
-  const { pathname } = useRouter();
+type PostListProps = {
+  posts: any;
+};
+
+export default function PostList({ posts }: PostListProps) {
+  const pathname = usePathname();
+  console.log(posts);
 
   return (
     <article className="w-full h-full">
