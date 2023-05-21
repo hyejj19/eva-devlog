@@ -1,21 +1,35 @@
 'use client';
 
+import DOMPurify from 'isomorphic-dompurify';
+import { formatDate } from '../libs/formatDate';
+import { NotionBlocksHtmlParser } from '@notion-stuff/blocks-html-parser';
+
 export default function PostContent({ contents }) {
-  console.log(contents);
+  const { contentRes, propertiesRes } = contents;
+
+  const parser = NotionBlocksHtmlParser.getInstance();
+  const html = parser.parse(contentRes);
 
   return (
     <article className="w-full h-full">
       <div className="flex px-2 pb-3 flex-col mb-10 border-b">
         <h1 className="title">
-          Next.js와 Notion API를 활용해 블로그를 만들어 보았습니다.
+          {propertiesRes.properties.title.title[0].plain_text}
         </h1>
         <div className="flex flex-col w-full items-end space-y-2 mt-2 small-text">
-          <span className="text-xs"># React</span>
-          <span className="text-xs">2023.04.26</span>
+          <span className="text-xs">
+            # {propertiesRes.properties.Tags.multi_select[0].name}
+          </span>
+          <span className="text-xs">
+            {formatDate(propertiesRes.created_time)}
+          </span>
         </div>
       </div>
 
-      <div className="w-full flex flex-col px-2 mb-16">본문 goes here</div>
+      <div
+        className="w-full flex flex-col px-2 mb-16"
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
+      />
     </article>
   );
 }
