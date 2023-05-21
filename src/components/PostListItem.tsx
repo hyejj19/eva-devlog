@@ -12,11 +12,11 @@ type PostListItemProps = {
 export default function PostListItem({ info }: PostListItemProps) {
   const pathname = usePathname();
 
-  const { tags, title, createdAt, slug } = info;
+  const { tags, title, createdAt, id } = info;
   const formattedDate = formatDate(createdAt);
 
   return (
-    <Link href={`/blog/${slug}`}>
+    <Link href={`/posts/${id}`}>
       <div className="w-full flex py-3 px-2 hover:bg-light-teal dark:hover:text-main-teal hover:transition-colors rounded-md items-center cursor-pointer">
         {pathname === '/' ? (
           <>

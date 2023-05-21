@@ -1,9 +1,3 @@
-import { Client } from '@notionhq/client';
-import {
-  BlockObjectResponse,
-  PartialBlockObjectResponse,
-} from '@notionhq/client/build/src/api-endpoints';
-
 const checkEnvironment = () => {
   let base_url =
     process.env.NODE_ENV === 'development'
@@ -12,8 +6,6 @@ const checkEnvironment = () => {
 
   return base_url;
 };
-
-const notionClient = new Client({ auth: process.env.NEXT_PUBLIC_NOTION_KEY });
 
 // TODO: 캐시, revalidation 옵션 등 추가 셋팅
 
@@ -25,20 +17,10 @@ export const getPosts = async () => {
   return data;
 };
 
-// 블로그 포스트 프로퍼티 가져오기
-export const getPost = async (id: string) => {
-  return await notionClient.pages.retrieve({ page_id: id });
-};
-
-// 블로그 포스트 내용 가져오기
+// 블로그 콘텐츠 가져오기
 export const getPostContent = async (id: string) => {
-  const baseQuery = {
-    block_id: id,
-    page_size: 100,
-  };
-  let results: (PartialBlockObjectResponse | BlockObjectResponse)[] = [];
-  let postContent = await notionClient.blocks.children.list(baseQuery);
-  results = [...postContent.results];
+  const response = await fetch(checkEnvironment().concat(`/api/post?id=${id}`));
+  const data = response.json();
 
-  return results;
+  return data;
 };
