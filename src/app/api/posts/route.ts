@@ -11,7 +11,7 @@ export async function GET() {
       headers: {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_NOTION_KEY}`,
         'Content-Type': 'application/json',
-        'Notion-Version': '2021-08-16',
+        'Notion-Version': '2022-02-22',
       },
       body: JSON.stringify({
         sorts: [

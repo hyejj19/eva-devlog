@@ -1,4 +1,8 @@
-export default function PostContent() {
+'use client';
+
+export default function PostContent({ contents }) {
+  console.log(contents);
+
   return (
     <article className="w-full h-full">
       <div className="flex px-2 pb-3 flex-col mb-10 border-b">
