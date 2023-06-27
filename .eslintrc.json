@@ -1,3 +1,131 @@
 {
-  "extends": "next/core-web-vitals"
+  // "root": true,
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint/eslint-plugin", "prettier", "import"],
+  "parserOptions": { "project": "./tsconfig.json" },
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": ["./tsconfig.json"]
+      },
+      "node": true
+    }
+  },
+  "rules": {
+    "react/function-component-definition": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-expressions": "off",
+    "@typescript-eslint/naming-convention": [
+      "off",
+      {
+        "selector": "variable",
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"]
+      }
+    ],
+    "no-alert": "off",
+    "no-plusplus": "off",
+    "consistent-return": "off",
+    "no-restricted-syntax": "off",
+    "no-return-assign": "off",
+    "guard-for-in": "off",
+    "react/prop-types": "off",
+    "react/no-unused-prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "import/prefer-default-export": "off",
+    "func-names": "off",
+    "react/require-default-props": "off",
+    "react/default-props-match-prop-types": "off",
+    "react/jsx-props-no-spreading": ["off"],
+    "react-hooks/exhaustive-deps": ["off"],
+    "linebreak-style": ["error"],
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "no-console": ["warn"],
+    "no-underscore-dangle": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "react/button-has-type": "off",
+    "import/no-named-as-default": "off",
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": ["state"]
+      }
+    ],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ],
+    "jsx-a11y/no-static-element-interactions": [
+      "off",
+      {
+        "handlers": [
+          "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ]
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling"],
+          "index"
+        ],
+        "pathGroups": [
+          { "pattern": "next/*", "group": "builtin", "position": "before" },
+          {
+            "pattern": "styled-components",
+            "group": "external"
+          },
+          {
+            "pattern": "components/*",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "components/*/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "hooks/*",
+            "group": "internal"
+          },
+          {
+            "pattern": "types/*",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": []
+      }
+    ]
+  },
+  "ignorePatterns": [".eslintrc", "next.config.js", "tsconfig.json"]
 }

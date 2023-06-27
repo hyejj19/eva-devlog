@@ -1,8 +1,8 @@
 'use client';
 
 import DOMPurify from 'isomorphic-dompurify';
-import { formatDate } from '../libs/formatDate';
 import { NotionBlocksHtmlParser } from '@notion-stuff/blocks-html-parser';
+import { formatDate } from '../libs/formatDate';
 
 export default function PostContent({ contents }) {
   const { contentRes, propertiesRes } = contents;
