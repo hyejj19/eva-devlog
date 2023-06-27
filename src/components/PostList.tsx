@@ -5,8 +5,8 @@
 'use client';
 
 import Link from 'next/link';
-import PostListItem from './PostListItem';
 import { usePathname } from 'next/navigation';
+import PostListItem from './PostListItem';
 import { NextApiPostInfoResp } from '../types/NextApiTypes';
 
 type PostListProps = {

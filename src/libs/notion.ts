@@ -1,5 +1,5 @@
 const checkEnvironment = () => {
-  let base_url =
+  const base_url =
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:3000'
       : 'https://example.com';
@@ -11,10 +11,14 @@ const checkEnvironment = () => {
 
 // 블로그 목록 가져오기
 export const getPosts = async () => {
-  const response = await fetch(checkEnvironment().concat('/api/posts'));
-  const data = response.json();
+  try {
+    const response = await fetch(checkEnvironment().concat('/api/posts'));
+    const data = response.json();
 
-  return data;
+    return await data;
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 // 블로그 콘텐츠 가져오기
