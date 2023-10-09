@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NextApiPostInfoResp } from '../types/NextApiTypes';
-import { formatDate } from '../libs/formatDate';
+import { formatDate } from '../utils/formatDate';
 
 type PostListItemProps = {
   info: NextApiPostInfoResp;

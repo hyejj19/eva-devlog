@@ -122,3 +122,11 @@ export interface Annotations2 {
   code: boolean;
   color: string;
 }
+
+export interface IPostInfos {
+  id: string;
+  tags: string;
+  title: string;
+  createdAt: string;
+  slug: string;
+}

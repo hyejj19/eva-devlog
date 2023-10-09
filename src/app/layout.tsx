@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/globals.css';
+import '../styles/notionStyle.css';
 
 import Header from '../components/Header';
 
@@ -10,7 +11,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}>
+      <body suppressHydrationWarning>
         <main className="flex flex-col items-center h-full w-full px-4 lg:px-0">
           <section className="flex flex-col items-center h-full w-full max-w-[900px]">
             <Header />

@@ -3,17 +3,18 @@ import ContentLayout from '../components/ContentLayout';
 import Intro from '../components/Intro';
 import PostList from '../components/PostList';
 import TagList from '../components/TagList';
-import { getPosts } from '../libs/notion';
+import { getDatabaseItems } from '../utils/notion';
 
 export default async function Page() {
-  const postInfos = await getPosts();
+  const databaseId = process.env.NEXT_PUBLIC_NOTION_DATABASE_ID as string;
+  const databaseItems = await getDatabaseItems(databaseId);
 
   return (
     <>
       <Intro />
       <ContentLayout>
         <TagList />
-        <PostList postInfos={postInfos} />
+        <PostList postInfos={databaseItems} />
       </ContentLayout>
     </>
   );

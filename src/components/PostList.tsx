@@ -7,10 +7,10 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import PostListItem from './PostListItem';
-import { NextApiPostInfoResp } from '../types/NextApiTypes';
+import { IPostInfos } from '../types/NotionTypes';
 
 type PostListProps = {
-  postInfos: NextApiPostInfoResp[];
+  postInfos: IPostInfos[];
 };
 
 export default function PostList({ postInfos }: PostListProps) {

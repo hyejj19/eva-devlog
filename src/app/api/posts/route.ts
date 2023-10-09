@@ -22,7 +22,7 @@ export async function GET() {
           },
         ],
       }),
-    }
+    },
   );
 
   // 응답 내용 확인
