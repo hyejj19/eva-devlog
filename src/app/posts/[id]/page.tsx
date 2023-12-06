@@ -5,8 +5,8 @@ import PostContent from '../../../components/PostContent';
 import { getPageContent } from '../../../utils/notion';
 
 export default async function PostPage({ params }) {
-  const { id } = params;
-  const recordMap = await getPageContent(id);
+  const { id: pageId } = params;
+  const recordMap = await getPageContent(pageId);
 
   return (
     <section className="mt-16 w-full">

@@ -8,19 +8,15 @@ export const propertyTable = {
   Tags: 'Tags',
 };
 
-// Initializing a client
 export const notion = new Client({
   auth: process.env.NEXT_PUBLIC_NOTION_KEY,
 });
 
-export interface DatabaseQueryOption {
-  tagName?: string;
-}
+export const reactNotionApi = new NotionAPI();
 
-export const getDatabaseItems = async (
-  databaseId: string,
-  option?: DatabaseQueryOption,
-) => {
+const databaseId = process.env.NEXT_PUBLIC_NOTION_DATABASE_ID as string;
+
+export const getDatabaseItems = async () => {
   const databaseItems = await notion.databases.query({
     database_id: databaseId,
     sorts: [
@@ -46,14 +42,6 @@ export const getDatabaseItems = async (
   return postsInfos;
 };
 
-export const getPageItem = async (pageId: string) => {
-  const pageItem = await notion.pages.retrieve({
-    page_id: pageId,
-  });
-
-  return pageItem;
-};
-
 export const getSearchItems = async (query: string) => {
   const searchItems = await notion.search({
     query,
@@ -70,8 +58,6 @@ export const getSearchItems = async (query: string) => {
 
   return searchItems.results as PageObjectResponse[];
 };
-
-export const reactNotionApi = new NotionAPI();
 
 export const getPageContent = async (pageId: string) => {
   const recordMap = await reactNotionApi.getPage(pageId);

@@ -6,8 +6,7 @@ import TagList from '../components/TagList';
 import { getDatabaseItems } from '../utils/notion';
 
 export default async function Page() {
-  const databaseId = process.env.NEXT_PUBLIC_NOTION_DATABASE_ID as string;
-  const databaseItems = await getDatabaseItems(databaseId);
+  const databaseItems = await getDatabaseItems();
 
   return (
     <>
