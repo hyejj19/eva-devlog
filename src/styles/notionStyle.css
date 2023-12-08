@@ -1660,6 +1660,7 @@ svg.notion-page-icon {
   flex-direction: column;
 }
 
+// NOTE: TOC 를 위한 CSS 속성
 .notion-table-of-contents {
   width: 100%;
   margin: 4px 0;

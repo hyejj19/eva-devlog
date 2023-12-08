@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Image from 'next/legacy/image';
 import { ExtendedRecordMap } from 'notion-types';
-import { defaultMapImageUrl, NotionRenderer } from 'react-notion-x';
+import { NotionRenderer } from 'react-notion-x';
 import { formatDate } from '../utils/formatDate';
 
 const Code = dynamic(
@@ -12,7 +12,6 @@ const Code = dynamic(
     ssr: false,
   },
 );
-const Collection = () => null;
 
 const Equation = dynamic(() =>
   import('react-notion-x/build/third-party/equation').then((m) => m.Equation),

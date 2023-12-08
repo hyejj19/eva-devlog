@@ -1,7 +1,6 @@
-// TODO: 본문 컨텐츠와 연동되도록 구현
-
 'use client';
 
+// TODO: 언젠간 꼭 사용하자...
 export default function TableOfContents() {
   return (
     <article className="w-[280px] h-full hidden md:block">
