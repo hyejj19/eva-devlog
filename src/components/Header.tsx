@@ -19,7 +19,7 @@ export default function Header() {
         scrollPosition > 40 &&
         'bg-opacity-80 dark:bg-opacity-80 backdrop-blur-sm'
       }`}>
-      <Link href={'/'}>
+      <Link href="/">
         <div className="cursor-pointer text-3xl font-bold">
           <span className="hover:text-main-orange hover:transition-colors">
             Develog
@@ -30,13 +30,13 @@ export default function Header() {
 
       <nav className="flex">
         <div className="space-x-3 mr-4 hidden md:flex">
-          <Link href={'/'}>
+          <Link href="/">
             <div className="hover-text">home</div>
           </Link>
-          <Link href={'/blog'}>
+          <Link href="/posts">
             <div className="hover-text">posts</div>
           </Link>
-          <Link href={'/resume'}>
+          <Link href="/resume">
             <div className="hover-text">resume</div>
           </Link>
         </div>

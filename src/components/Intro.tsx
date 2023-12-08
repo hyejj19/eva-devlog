@@ -13,7 +13,7 @@ export default function Intro() {
           priority
           quality={100}
           placeholder="blur"
-          blurDataURL={'/profile_develog.png'}
+          blurDataURL="/profile_develog.png"
           className="mr-5 w-20 h-20 sm:w-[120px] sm:h-[120px]"
         />
 
@@ -26,7 +26,7 @@ export default function Intro() {
         </div>
 
         <div className="ml-auto hidden md:block">
-          <Link href={'https://friedegg556.tistory.com/'} target="_blank">
+          <Link href="https://friedegg556.tistory.com/" target="_blank">
             <span className="text-xs text-gray-600 dark:text-gray-300 hover-text">
               이전 블로그 방문하기
             </span>
