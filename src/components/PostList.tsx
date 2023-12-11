@@ -7,13 +7,13 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import PostListItem from './PostListItem';
-import { IPostInfos } from '../types/NotionTypes';
+import { IArticleFile } from '../types/article';
 
 type PostListProps = {
-  postInfos: IPostInfos[];
+  articleDatas: IArticleFile[];
 };
 
-export default function PostList({ postInfos }: PostListProps) {
+export default function PostList({ articleDatas }: PostListProps) {
   const pathname = usePathname();
 
   return (
@@ -36,8 +36,8 @@ export default function PostList({ postInfos }: PostListProps) {
       </div>
 
       <div className="w-full flex flex-col space-y-2">
-        {postInfos.map((info) => (
-          <PostListItem key={info.id} info={info} />
+        {articleDatas.map((article) => (
+          <PostListItem key={article.slug} article={article} />
         ))}
       </div>
     </article>

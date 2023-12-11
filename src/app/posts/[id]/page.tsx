@@ -1,16 +1,16 @@
 import React from 'react';
 import ContentLayout from '../../../components/ContentLayout';
 import PostContent from '../../../components/PostContent';
-import { getPageContent } from '../../../utils/notion';
+import { getArticleData } from '../../../utils/articles-utils';
 
 export default async function PostPage({ params }) {
-  const { id: pageId } = params;
-  const recordMap = await getPageContent(pageId);
+  const { id: slug } = params;
+  const articleData = getArticleData(slug);
 
   return (
     <section className="mt-16 w-full">
       <ContentLayout>
-        <PostContent recordMap={recordMap} />
+        <PostContent articleData={articleData} />
       </ContentLayout>
     </section>
   );

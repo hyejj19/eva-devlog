@@ -1,11 +1,21 @@
 'use client';
 
-import NotionPageRenderer from './NotionPageRenderer';
+import { IArticleFile } from '../types/article';
+import Article from './Article';
+import ContentLayout from './ContentLayout';
+import TableOfContents from './TableOfContents';
 
-export default function PostContent({ recordMap }) {
+interface PostContentProps {
+  articleData: IArticleFile;
+}
+
+export default function PostContent({ articleData }: PostContentProps) {
   return (
-    <article className="w-full h-full">
-      <NotionPageRenderer recordMap={recordMap} />
-    </article>
+    <main className="w-full h-full">
+      <ContentLayout>
+        <TableOfContents />
+        <Article articleData={articleData} />
+      </ContentLayout>
+    </main>
   );
 }

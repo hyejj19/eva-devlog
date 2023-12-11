@@ -3,17 +3,17 @@ import ContentLayout from '../components/ContentLayout';
 import Intro from '../components/Intro';
 import PostList from '../components/PostList';
 import TagList from '../components/TagList';
-import { getDatabaseItems } from '../utils/notion';
+import { getAllArticles } from '../utils/articles-utils';
 
 export default async function Page() {
-  const databaseItems = await getDatabaseItems();
+  const articleDatas = getAllArticles();
 
   return (
     <>
       <Intro />
       <ContentLayout>
         <TagList />
-        <PostList postInfos={databaseItems} />
+        <PostList articleDatas={articleDatas} />
       </ContentLayout>
     </>
   );
