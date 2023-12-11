@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/globals.css';
 import '../styles/notionStyle.css';
 
-import Header from '../components/Header';
+import Header from '../components/common/Header';
 
 export default function RootLayout({
   children,

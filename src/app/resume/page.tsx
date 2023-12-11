@@ -1,4 +1,4 @@
-import ContentLayout from '../../components/ContentLayout';
+import ContentLayout from '../../components/post/ContentLayout';
 
 export default function Home() {
   return (

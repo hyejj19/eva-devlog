@@ -1,6 +1,6 @@
 import React from 'react';
-import ContentLayout from '../../../components/ContentLayout';
-import PostContent from '../../../components/PostContent';
+import ContentLayout from '../../../components/post/ContentLayout';
+import PostContent from '../../../components/post/PostContent';
 import { getArticleData } from '../../../utils/articles-utils';
 
 export default async function PostPage({ params }) {

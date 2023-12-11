@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unstable-nested-components */
 import Markdown from 'markdown-to-jsx';
-import { IArticleFile } from '../types/article';
+import { IArticleFile } from '../../../types/article';
 
 interface ArticleProps {
   articleData: IArticleFile;

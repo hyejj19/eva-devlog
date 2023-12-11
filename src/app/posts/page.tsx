@@ -1,7 +1,7 @@
 import React from 'react';
-import ContentLayout from '../../components/ContentLayout';
-import TagList from '../../components/TagList';
-import PostList from '../../components/PostList';
+import ContentLayout from '../../components/post/ContentLayout';
+import TagList from '../../components/common/TagList';
+import PostList from '../../components/common/PostList';
 import { getAllArticles } from '../../utils/articles-utils';
 
 export default async function PostsPage() {

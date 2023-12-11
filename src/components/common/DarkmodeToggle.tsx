@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useDarkMode } from '../hooks/useDarkmode';
+import { useDarkMode } from '../../hooks/useDarkmode';
 
 // TODO: isDarkMode 의 초기 상태값 기억하여 토글 스위치 온오프 결정하기
 
@@ -38,7 +38,7 @@ export default function DarkmodeToggle() {
         <label className="inline-flex relative items-center cursor-pointer">
           <input
             type="checkbox"
-            className={`sr-only peer`}
+            className="sr-only peer"
             checked={isDarkMode}
             readOnly
           />

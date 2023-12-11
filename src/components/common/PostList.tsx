@@ -7,7 +7,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import PostListItem from './PostListItem';
-import { IArticleFile } from '../types/article';
+import { IArticleFile } from '../../types/article';
 
 type PostListProps = {
   articleDatas: IArticleFile[];

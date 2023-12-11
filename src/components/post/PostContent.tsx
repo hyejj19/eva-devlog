@@ -1,6 +1,6 @@
 'use client';
 
-import { IArticleFile } from '../types/article';
+import { IArticleFile } from '../../types/article';
 import Article from './Article';
 import ContentLayout from './ContentLayout';
 import TableOfContents from './TableOfContents';
