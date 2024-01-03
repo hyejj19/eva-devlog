@@ -27,10 +27,12 @@
     "@/*": ["src/*"]
   },
   "include": [
+    "next-env.d.ts",
     "./tailwind.config.json",
     "src/**/*",
     ".next/types/**/*.ts",
     "app/api"
   ], // ts 적용할 경로
-  "exclude": ["node_modules", "src/router"] // ts 적용하지 않을 폴더
+  "exclude": ["node_modules", "src/router"], // ts 적용하지 않을 폴더,
+  "plugins": [{ "name": "typescript-plugin-css-modules" }]
 }

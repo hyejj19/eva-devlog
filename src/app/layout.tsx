@@ -1,8 +1,8 @@
+import Head from 'next/head';
 import React from 'react';
-import '../styles/globals.css';
-import '../styles/notionStyle.css';
-
 import Header from '../components/common/Header';
+import '../styles/globals.css';
+import 'highlight.js/styles/default.css';
 
 export default function RootLayout({
   children,
@@ -11,6 +11,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <link
+          rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css"
+        />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js" />
+      </Head>
       <body suppressHydrationWarning>
         <main className="flex flex-col items-center h-full w-full px-4 lg:px-0">
           <section className="flex flex-col items-center h-full w-full max-w-[900px]">
