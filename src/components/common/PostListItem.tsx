@@ -2,35 +2,31 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { NextApiPostInfoResp } from '../types/NextApiTypes';
-import { formatDate } from '../utils/formatDate';
+import { IArticleFile } from '../../types/article';
 
 type PostListItemProps = {
-  info: NextApiPostInfoResp;
+  article: IArticleFile;
 };
 
-export default function PostListItem({ info }: PostListItemProps) {
+export default function PostListItem({ article }: PostListItemProps) {
   const pathname = usePathname();
 
-  const { tags, title, createdAt, id } = info;
-  const formattedDate = formatDate(createdAt);
+  const { title, tag, date, slug } = article;
 
   return (
-    <Link href={`/posts/${id}`}>
+    <Link href={`/posts/${slug}`}>
       <div className="w-full flex py-3 px-2 hover:bg-light-teal dark:hover:text-main-teal hover:transition-colors rounded-md items-center cursor-pointer">
         {pathname === '/' ? (
           <>
             <span className="text-base">{title}</span>
-            <span className="hidden sm:block ml-auto small-text">
-              {formattedDate}
-            </span>
+            <span className="hidden sm:block ml-auto small-text">{date}</span>
           </>
         ) : (
           <>
             <div className="w-full flex flex-col space-y-3">
               <div className="flex w-full justify-between small-text">
-                <span># {tags}</span>
-                <span className="hidden sm:block">{formattedDate}</span>
+                <span># {tag}</span>
+                <span className="hidden sm:block">{date}</span>
               </div>
               <span className="text-base">{title}</span>
             </div>
