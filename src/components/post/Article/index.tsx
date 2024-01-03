@@ -25,7 +25,7 @@ const Article = ({ articleData }: ArticleProps) => {
         </div>
       </article>
 
-      <article className="prose dark:prose-invert">
+      <article className="prose dark:prose-invert prose-code:text-sm">
         <Markdown>{content}</Markdown>
       </article>
     </section>
