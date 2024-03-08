@@ -15,7 +15,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
   };
 
   return (
-    <article className="w-[280px] h-full md:block sticky top-[100px]">
+    <article className="w-[280px] h-full md:block sticky top-[100px] hidden">
       <h2 className="subtitle">Contents</h2>
       <ul className="space-y-2 text-sm pt-2">
         {headings.map((headline) => (
