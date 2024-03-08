@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+
 'use client';
 
 import { useEffect } from 'react';
