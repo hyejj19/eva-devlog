@@ -3,6 +3,7 @@ import Markdown from 'markdown-to-jsx';
 import hljs from 'highlight.js';
 import { useEffect } from 'react';
 import { IArticleFile } from '../../../types/article';
+import { Heading } from './Heading';
 
 interface ArticleProps {
   articleData: IArticleFile;
@@ -26,7 +27,16 @@ const Article = ({ articleData }: ArticleProps) => {
       </article>
 
       <article className="prose dark:prose-invert prose-code:text-sm">
-        <Markdown>{content}</Markdown>
+        <Markdown
+          options={{
+            overrides: {
+              h3: {
+                component: ({ children }) => <Heading>{children}</Heading>,
+              },
+            },
+          }}>
+          {content}
+        </Markdown>
       </article>
     </section>
   );
