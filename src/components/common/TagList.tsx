@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 interface TagListProps {
   tagList: string[];
 }
@@ -18,7 +20,7 @@ export default function TagList({ tagList }: TagListProps) {
       <ul className="space-y-2 text-sm pt-2">
         {tagsWithAmount.map(([tag, amount]) => (
           <li key={tag} className="hover-text">
-            {`${tag} (${amount})`}
+            <Link href={`/posts?tag=${tag}`}>{`${tag} (${amount})`}</Link>
           </li>
         ))}
       </ul>
