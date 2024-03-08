@@ -11,9 +11,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
       <ul className="space-y-2 text-sm pt-2">
         {headings.map((headline) => (
           <li className="hover-text">
-            <a href={`#${headline.replace(/#|\*/g, '').trim()}`}>
-              {headline.replace(/#|\*/g, '')}
-            </a>
+            <a href={`#${headline}`}>{headline}</a>
           </li>
         ))}
       </ul>
