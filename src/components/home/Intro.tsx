@@ -6,23 +6,21 @@ export default function Intro() {
     <section className="w-full flex items-center mt-32">
       <article className="flex items-end w-full">
         <Image
-          src="/profile_develog.png"
+          src="/profile_devlog.webp"
           alt="프로필 이미지"
           width="120"
           height="120"
           priority
           quality={100}
           placeholder="blur"
-          blurDataURL="/profile_develog.png"
+          blurDataURL="/profile_devlog.webp"
           className="mr-5 w-20 h-20 sm:w-[120px] sm:h-[120px]"
         />
 
         <div className="max-w-[400px] text-sm sm:text-base">
-          <p className="font-bold text-lg sm:text-xl mb-2 sm:mb-3">
-            안녕하세요!🖐️
-          </p>
-          <p>기록으로 성장하는 개발자 박혜정 입니다.</p>
-          <p>공부하고 느낀 것을 블로그에 기록하고 있어요.</p>
+          <p className="font-bold text-lg sm:text-xl mb-2 sm:mb-3">Eva</p>
+          <p>프론트엔드 개발자 에바 입니다.</p>
+          <p>이 곳은 제가 공부하고 느낀 것을 기록하는 공간입니다.</p>
         </div>
 
         <div className="ml-auto hidden md:block">

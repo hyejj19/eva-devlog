@@ -24,7 +24,7 @@ export default function RootLayout({
             <Header />
             {children}
             <footer className="h-[100px] flex justify-center items-center text-sm text-gray-600 dark:text-gray-400 border-t w-full mt-16">
-              Copyright ⓒ 2023 parkhyejung All rights reserved.
+              ⓒ 2023 parkhyejung All rights reserved.
             </footer>
           </section>
         </main>

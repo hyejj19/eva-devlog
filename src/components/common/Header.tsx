@@ -11,7 +11,7 @@ export default function Header() {
       <Link href="/">
         <div className="cursor-pointer text-3xl font-bold">
           <span className="hover:text-main-orange hover:transition-colors">
-            Develog
+            Evalog
           </span>
           <span className="text-main-orange">.</span>
         </div>
