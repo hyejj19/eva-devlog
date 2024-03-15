@@ -17,11 +17,8 @@ export default function Header() {
         </div>
       </Link>
 
-      <nav className="flex">
-        <div className="space-x-3 mr-4 hidden md:flex">
-          <Link href="/">
-            <div className="hover-text">home</div>
-          </Link>
+      <nav className="flex w-full justify-end">
+        <div className="flex space-x-3 mr-4">
           <Link href="/posts">
             <div className="hover-text">posts</div>
           </Link>
