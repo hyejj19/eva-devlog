@@ -33,7 +33,7 @@ export const Obun = () => {
         </div>
       </article>
 
-      <Bold text="Experience" />
+      <Bold text="Performance" />
 
       <Ul>
         <li>

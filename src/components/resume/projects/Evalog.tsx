@@ -25,7 +25,7 @@ export const Evalog = () => {
         </div>
       </article>
 
-      <Bold text="Experience" />
+      <Bold text="Performance" />
       <Ul>
         <li>
           markdown 과 Markdown-to-JSX 툴을 사용해 데이터의 효율적 관리 및 빠른

@@ -18,7 +18,7 @@ export const Lalaloop = () => {
         및 보증금 환불 기능을 제공하는 모바일 웹 개발을 담당했습니다.
       </article>
 
-      <Bold text="Experience" />
+      <Bold text="Performance" />
       <Ul>
         <li>
           재사용 컴포넌트의 독립적인 활용성 증가를 위해 Storybook 도입 및 활용

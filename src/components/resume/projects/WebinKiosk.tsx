@@ -18,7 +18,7 @@ export const WebinKiosk = () => {
         진행하고 있습니다.
       </article>
 
-      <Bold text="Experience" />
+      <Bold text="Performance" />
       <Ul>
         <li>
           serial port를 활용한 기기 펌웨어 연동 및 mqtt 프로토콜을 활용한 웹
