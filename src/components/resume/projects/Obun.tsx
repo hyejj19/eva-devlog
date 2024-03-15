@@ -20,7 +20,7 @@ export const Obun = () => {
         <div className="text-xs text-gray-400 inline-block space-x-2 ml-2">
           <Link
             className="hover-text underline underline-offset-2"
-            href="https://play.google.com/store/search?q=%EC%98%A4%EB%8A%98%EC%9D%98%20%EB%B6%84%EB%A6%AC%EC%88%98%EA%B1%B0%EA%B1%B0&c=apps&hl=ko&gl=US"
+            href="https://play.google.com/store/apps/details?id=kr.co.nuriapp.caso&hl=ko&gl=US"
             target="_blank">
             <span>플레이스토어</span>
           </Link>
