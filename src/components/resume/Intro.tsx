@@ -5,12 +5,12 @@ export const Intro = () => {
     <>
       <div>
         <div className="flex mb-6 flex-col space-y-2">
-          <h1 className="text-3xl font-semibold">
+          <h1 className="text-2xl font-semibold">
             프론트엔드 개발자 박혜정
             <span className="font-normal"> 입니다.</span>
           </h1>
 
-          <article className="flex space-x-3 text-sm text-gray-400">
+          <article className="flex space-x-3 text-xs text-gray-400">
             <Link
               className="hover-text underline underline-offset-2"
               href="https://github.com/hyejj19"

@@ -3,5 +3,5 @@ interface H2Props {
 }
 
 export const H2 = ({ subTitle }: H2Props) => {
-  return <h2 className="text-2xl font-semibold mb-6">{subTitle}</h2>;
+  return <h2 className="text-xl font-semibold mb-3">{subTitle}</h2>;
 };
