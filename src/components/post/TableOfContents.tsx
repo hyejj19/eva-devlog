@@ -19,7 +19,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
       <h2 className="subtitle">Contents</h2>
       <ul className="space-y-2 text-sm pt-2">
         {headings.map((headline) => (
-          <li className="hover-text">
+          <li className="hover-text" key={headline}>
             <a href={`#${headline}`} onClick={(e) => scollEvent(e, headline)}>
               {headline}
             </a>
