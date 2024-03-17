@@ -6,6 +6,7 @@ import { Intro } from '../../components/resume/Intro';
 import { Projects } from '../../components/resume/Projects';
 import { SoftSkills } from '../../components/resume/SoftSkills';
 import { Stacks } from '../../components/resume/Stacks';
+import { ScrollToTopButton } from '../../components/common/ScrollToTopButton';
 
 export const metadata: Metadata = {
   title: '박혜정 이력서',
@@ -47,6 +48,7 @@ export default function Resume() {
           <Education />
         </div>
       </ContentLayout>
+      <ScrollToTopButton />
     </section>
   );
 }

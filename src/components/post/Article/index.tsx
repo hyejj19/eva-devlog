@@ -4,6 +4,7 @@ import hljs from 'highlight.js';
 import { useEffect } from 'react';
 import { IArticleFile } from '../../../types/article';
 import { Heading } from './Heading';
+import { ScrollToTopButton } from '../../common/ScrollToTopButton';
 
 interface ArticleProps {
   articleData: IArticleFile;
@@ -38,6 +39,7 @@ const Article = ({ articleData }: ArticleProps) => {
           {content}
         </Markdown>
       </article>
+      <ScrollToTopButton />
     </section>
   );
 };
