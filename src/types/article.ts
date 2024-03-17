@@ -6,6 +6,5 @@ export interface IArticleFile {
   image: string;
   excerpt: string;
   tag: string;
-  readTime: string;
   content: string;
 }
