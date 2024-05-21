@@ -1,20 +1,19 @@
 interface SubTitleProps {
   name: string;
-  team: string;
   startDate: string;
   endDate: string | '재직중' | '진행중';
 }
-export const SubTitle = ({ name, team, startDate, endDate }: SubTitleProps) => {
+export const SubTitle = ({ name, startDate, endDate }: SubTitleProps) => {
   return (
-    <div className="flex flex-col space-y-1 pb-2 mb-6 border-b border-gray-100 dark:border-gray-600">
-      <h3 className="font-semibold text-md">{name}</h3>
-      <p className="text-xs text-gray-400">
-        {`${team} | ${startDate} ~ `}
+    <div className="flex items-center space-y-1 space-x-2 pb-2">
+      <li className="font-bold text-md list-disc">{name}</li>
+      <span className="text-sm text-gray-600 dark:text-gray-400">
+        {`${startDate} ~ `}
         {endDate !== '재직중' && endDate !== '진행중' && `${endDate}`}
         {(endDate === '재직중' || endDate === '진행중') && (
           <span className="text-main-teal">{endDate}</span>
         )}
-      </p>
+      </span>
     </div>
   );
 };

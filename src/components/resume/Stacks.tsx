@@ -7,9 +7,7 @@ export const Stacks = () => {
       <H2 subTitle="기술 스택" />
       <Ul>
         <li>
-          <span className="font-bold text-main-orange">
-            React.js, TypeScript, Next.js,{` `}
-          </span>
+          <span className="font-bold">React.js, TypeScript, Next.js,{` `}</span>
           Redux, React Query, Vite
         </li>
         <li>Styled Components, Tailwind CSS</li>

@@ -6,9 +6,8 @@ export const WebinKiosk = () => {
   return (
     <>
       <SubTitle
-        name="위빈 키오스크 POC"
-        team="오이스터에이블"
-        startDate="2024.03"
+        name="RC 4.0 키오스크 소프트웨어 개발"
+        startDate="2024.04"
         endDate="진행중"
       />
       <Bold text="Description" />

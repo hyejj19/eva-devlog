@@ -39,12 +39,10 @@ export default function Resume() {
   return (
     <section className="container">
       <ContentLayout>
-        <div className="flex flex-col space-y-7">
+        <div className="flex flex-col space-y-10">
           <Intro />
           <Stacks />
           <Career />
-          <Projects />
-          <SoftSkills />
           <Education />
         </div>
       </ContentLayout>
