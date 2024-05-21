@@ -6,12 +6,7 @@ import { Ul } from '../Ul';
 export const Evalog = () => {
   return (
     <>
-      <SubTitle
-        name="Evalog."
-        team="개인 블로그"
-        startDate="2023.04"
-        endDate="진행중"
-      />
+      <SubTitle name="Evalog." startDate="2023.04" endDate="진행중" />
       <Bold text="Description" />
       <article className="text-sm mb-4 leading-6">
         기술 학습 아카이빙을 위한 개인 블로그 프로젝트 입니다.
