@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
 import ContentLayout from '../../components/post/ContentLayout';
-import { Education } from '../../components/resume/\bEducation';
+import { Education } from '../../components/resume/Education';
 import { Career } from '../../components/resume/Career';
 import { Intro } from '../../components/resume/Intro';
 import { Projects } from '../../components/resume/Projects';
 import { SoftSkills } from '../../components/resume/SoftSkills';
 import { Stacks } from '../../components/resume/Stacks';
 import { ScrollToTopButton } from '../../components/common/ScrollToTopButton';
+import { ETC } from '../../components/resume/ETC';
 
 export const metadata: Metadata = {
   title: '박혜정 이력서',
@@ -43,7 +44,9 @@ export default function Resume() {
           <Intro />
           <Stacks />
           <Career />
+          <Projects />
           <Education />
+          <ETC />
         </div>
       </ContentLayout>
       <ScrollToTopButton />
