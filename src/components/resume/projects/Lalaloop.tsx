@@ -19,7 +19,7 @@ export const Lalaloop = () => {
             <div className="mt-2">
               <p>
                 - 기술스택: Next.js (pages router), Styled Components, React
-                Query
+                Query, MSW
               </p>
               <p>- 기여도: 100%</p>
             </div>
@@ -87,6 +87,10 @@ export const Lalaloop = () => {
             <li>
               비슷한 테마의 다양한 디자인 변형을 적용할 수 있도록 리스트
               컴포넌트에 합성 컴포넌트 패턴 적용, 중복 코드 및 가독성 개선
+            </li>
+            <li>
+              캘린더, QR 스캐너 등 외부 라이브러리 도입 및 UX에 맞도록
+              커스터마이징
             </li>
           </Ul>
         </section>
