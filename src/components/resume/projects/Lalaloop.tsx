@@ -65,11 +65,12 @@ export const Lalaloop = () => {
         />
         <section className="px-5">
           <article className="text-sm mb-4 leading-6 ">
-            다회용컵 물류 배송 관리를 위한 PWA 모바일 웹
+            다회용컵 물류 배송 관리를 위한 PWA 모바일 웹으로, 물류 상태 조회,
+            대여기 입고 처리 및 입고 알림톡 발송 등 물류 업무를 위한 기능 제공
             <div className="mt-2">
               <p>
-                - 기술스택: Next.js (pages router), Styled Components, next-pwa,
-                zustand
+                - 기술스택: Next.js (pages router), React-query, Styled
+                Components, next-pwa
               </p>
               <p>- 기여도: 100%</p>
             </div>
@@ -77,16 +78,16 @@ export const Lalaloop = () => {
 
           <Ul>
             <li>
-              웹페이지에 매번 접속하지 않고도 모바일 홈 화면에서 바로 접근할 수
-              있도록 Progressive Web App (PWA)를 적용하여 UX 개선
+              비슷한 UI의 리스트 컴포넌트에 합성 컴포넌트 패턴 적용하여 코드
+              재사용성 및 가독성 개선
             </li>
             <li>
               효율적인 에러 핸들링을 위해 Custom Error Boundary를 도입하고,
               상황에 맞는 에러를 throw하여 일관된 에러 처리 구현
             </li>
             <li>
-              비슷한 테마의 다양한 디자인 변형을 적용할 수 있도록 리스트
-              컴포넌트에 합성 컴포넌트 패턴 적용, 중복 코드 및 가독성 개선
+              배송기사 모바일 기기에서 바로 접근할 수 있도록 Progressive Web App
+              (PWA)를 적용하여 UX 개선
             </li>
             <li>
               캘린더, QR 스캐너 등 외부 라이브러리 도입 및 UX에 맞도록

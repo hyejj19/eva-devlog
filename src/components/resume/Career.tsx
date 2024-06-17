@@ -17,8 +17,8 @@ export const Career = () => {
       </div>
 
       <section className="flex flex-col gap-10">
-        <Lalaloop />
         <Obun />
+        <Lalaloop />
       </section>
     </div>
   );

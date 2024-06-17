@@ -13,12 +13,15 @@ export const Obun = () => {
       />
       <article className="text-sm mb-4 leading-6 px-5">
         <p>
-          IoT 분리수거 배출 기기인 ‘위빈’과 연동하여 기기 배출, 포인트 적립,쇼핑
-          등 유저 활동을 지원하는 앱.
+          분리수거 배출 기기인 ‘위빈’과 연동하여 재활용품 배출, 포인트 적립,
+          쇼핑 등 유저 활동을 지원하는 앱으로, flutter 기반 웹뷰 형태로 개발됨
         </p>
         <p>누적 가입자 9만 5천여명, MAU 1만 6천,일일 배출량 1만 5천건</p>
         <div className="mt-2">
-          <p>- 기술스택: React, Vite, Styled Components, React-query</p>
+          <p>
+            - 기술스택: React, Vite, React-query, Styled Components,
+            Redux-toolkit
+          </p>
           <p>- 기여도: 100%</p>
         </div>
       </article>
@@ -27,8 +30,8 @@ export const Obun = () => {
         <Ul>
           <li>
             <Markdown>
-              CRA → Vite 마이그레이션을 통해 **CI/CD 소요시간 66.58% 단축**으로
-              DX 향상
+              기존 CRA 에서 Vite 마이그레이션을 통해 CI/CD 소요시간 66.58% 단축
+              및 unused javascript 비율 약 50% 감소
             </Markdown>
           </li>
           <li>
@@ -49,8 +52,8 @@ export const Obun = () => {
           </li>
           <li>
             <Markdown>
-              웹소켓 도입으로 기존 평균 180회 호출이 발생하는 REST API 대비
-              **서버 부하 절감 및 빠른 피드백으로 UX 개선**
+              웹소켓 도입으로 기존 평균 180회 호출이 발생하는 기존 대비 약 **90%
+              api 호출 최적화** 및 빠른 피드백으로 UX 개선
             </Markdown>
           </li>
         </Ul>
