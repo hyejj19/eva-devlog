@@ -22,9 +22,9 @@ export default function Header() {
           <Link href="/posts">
             <div className="hover-text">posts</div>
           </Link>
-          <Link href="/resume">
+          {/* <Link href="/resume">
             <div className="hover-text">resume</div>
-          </Link>
+          </Link> */}
         </div>
         <DarkmodeToggle />
       </nav>
