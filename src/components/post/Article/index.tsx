@@ -31,8 +31,15 @@ const Article = ({ articleData }: ArticleProps) => {
         <Markdown
           options={{
             overrides: {
+              h2: {
+                component: ({ children }) => (
+                  <Heading level={2}>{children}</Heading>
+                ),
+              },
               h3: {
-                component: ({ children }) => <Heading>{children}</Heading>,
+                component: ({ children }) => (
+                  <Heading level={3}>{children}</Heading>
+                ),
               },
             },
           }}>
