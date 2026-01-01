@@ -1,13 +1,31 @@
+import React from 'react';
+
 interface HeadingProps {
   children: React.ReactNode;
+  level?: 2 | 3;
 }
 
-export const Heading = ({ children }: HeadingProps) => {
-  const heading = children ? children[0]?.props?.children[0] : 'heading';
+// children에서 텍스트 추출 (볼드 유무 관계없이)
+function extractText(children: React.ReactNode): string {
+  if (typeof children === 'string') {
+    return children;
+  }
+  if (Array.isArray(children)) {
+    return children.map(extractText).join('');
+  }
+  if (React.isValidElement(children) && children.props?.children) {
+    return extractText(children.props.children);
+  }
+  return '';
+}
+
+export const Heading = ({ children, level = 3 }: HeadingProps) => {
+  const headingText = extractText(children);
+  const Tag = level === 2 ? 'h2' : 'h3';
 
   return (
-    <h3 className="scroll-mt-[100px]" id={`${heading}`}>
-      {heading}
-    </h3>
+    <Tag className="scroll-mt-[100px]" id={headingText}>
+      {children}
+    </Tag>
   );
 };
