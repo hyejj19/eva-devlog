@@ -4,7 +4,6 @@ import { Education } from '../../components/resume/Education';
 import { Career } from '../../components/resume/Career';
 import { Intro } from '../../components/resume/Intro';
 import { Projects } from '../../components/resume/Projects';
-import { SoftSkills } from '../../components/resume/SoftSkills';
 import { Stacks } from '../../components/resume/Stacks';
 import { ScrollToTopButton } from '../../components/common/ScrollToTopButton';
 import { ETC } from '../../components/resume/ETC';
