@@ -58,7 +58,8 @@ async function notionPageToArticle(
 ): Promise<IArticleFile> {
   const title = getTitle(page);
   // Slug 우선순위: Slug 속성 → Title → notion-페이지ID
-  const slug = getRichText(page, 'Slug') || title || `notion-${page.id.replace(/-/g, '')}`;
+  const slug =
+    getRichText(page, 'Slug') || title || `notion-${page.id.replace(/-/g, '')}`;
 
   let content = '';
   if (includeContent) {

@@ -10,8 +10,11 @@ export const extractHeadings = (text: string): HeadingItem[] => {
     .filter((line) => line.startsWith('## ') || line.startsWith('### '))
     .map((line): HeadingItem => {
       const level: 2 | 3 = line.startsWith('### ') ? 3 : 2;
-      const text = line.replace(/^#{2,3}\s+/, '').replace(/\*\*/g, '').trim();
-      return { level, text };
+      const headingText = line
+        .replace(/^#{2,3}\s+/, '')
+        .replace(/\*\*/g, '')
+        .trim();
+      return { level, text: headingText };
     });
 
   return headings;
