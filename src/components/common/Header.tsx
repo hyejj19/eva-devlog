@@ -1,9 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import DarkmodeToggle from './DarkmodeToggle';
 
 export default function Header() {
+  const pathname = usePathname();
+
   return (
     <header
       className={`flex w-full justify-between pt-6 pb-2 h-[80px] container-padding items-end fixed max-w-[900px]
@@ -20,10 +23,24 @@ export default function Header() {
       <nav className="flex w-full justify-end items-center">
         <div className="flex gap-4 mr-4">
           <Link href="/posts">
-            <div className="hover-text ds-body">posts</div>
+            <div
+              className={`ds-body pb-1 transition-colors ${
+                pathname.startsWith('/posts')
+                  ? 'text-main-orange border-b-2 border-main-orange'
+                  : 'hover-text'
+              }`}>
+              posts
+            </div>
           </Link>
           {/* <Link href="/resume">
-            <div className="hover-text ds-body">resume</div>
+            <div
+              className={`ds-body pb-1 transition-colors ${
+                pathname === '/resume'
+                  ? 'text-main-orange border-b-2 border-main-orange'
+                  : 'hover-text'
+              }`}>
+              resume
+            </div>
           </Link> */}
         </div>
         <DarkmodeToggle />
