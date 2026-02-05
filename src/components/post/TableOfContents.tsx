@@ -79,13 +79,13 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
   return (
     <article className="w-[280px] h-full md:block sticky top-[100px] hidden">
       <h2 className="subtitle">Contents</h2>
-      <ul className="space-y-2 text-sm pt-2 border-l-2 border-gray-200 dark:border-gray-700">
+      <ul className="flex flex-col gap-2 ds-body-sm pt-2 border-l-2 border-border dark:border-border-dark">
         {headings.map((heading) => (
           <li
             className={`-ml-[2px] transition-all duration-200 ${heading.level === 3 ? 'pl-6' : 'pl-4'} ${
               activeId === heading.text
                 ? 'border-l-2 border-main-orange text-main-orange font-semibold'
-                : 'border-l-2 border-transparent hover-text text-gray-600 dark:text-gray-400'
+                : 'border-l-2 border-transparent hover-text ds-text-muted'
             }`}
             key={heading.text}>
             <a

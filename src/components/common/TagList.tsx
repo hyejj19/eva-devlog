@@ -22,7 +22,7 @@ export default function TagList({ tagList }: TagListProps) {
       {/* 데스크톱 버전 */}
       <article className="w-[280px] h-full hidden md:block">
         <h2 className="subtitle">Tags</h2>
-        <ul className="space-y-2 text-sm pt-2">
+        <ul className="flex flex-col gap-2 ds-body-sm pt-2">
           {tagsWithAmount.map(([tag, amount]) => (
             <li key={tag} className="hover-text">
               <Link href={`/posts?tag=${tag}`}>{`${tag} (${amount})`}</Link>
@@ -35,10 +35,10 @@ export default function TagList({ tagList }: TagListProps) {
       <div className="md:hidden mb-6 w-full">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex justify-between items-center py-3 px-4 bg-light-teal dark:bg-gray-800 rounded-lg transition-colors duration-200 interactive"
+          className="w-full flex justify-between items-center py-3 px-4 ds-bg-elevated rounded-lg transition-colors duration-200 interactive"
           aria-expanded={isOpen}
           aria-controls="mobile-tag-menu">
-          <span className="font-semibold">태그 필터</span>
+          <span className="font-semibold ds-body">태그 필터</span>
           <svg
             className={`w-5 h-5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
             fill="none"
@@ -57,8 +57,8 @@ export default function TagList({ tagList }: TagListProps) {
         {isOpen && (
           <div
             id="mobile-tag-menu"
-            className="mt-2 py-3 px-4 bg-white dark:bg-deep-gray border border-gray-200 dark:border-gray-700 rounded-lg">
-            <ul className="space-y-3 text-sm">
+            className="mt-2 py-3 px-4 bg-surface dark:bg-surface-dark ds-border border rounded-lg">
+            <ul className="flex flex-col gap-3 ds-body-sm">
               <li className="hover-text">
                 <Link href="/posts" onClick={() => setIsOpen(false)}>
                   All ({tagList.length})

@@ -31,16 +31,16 @@ export default function PostList({ articleDatas }: PostListProps) {
     <article className="w-full h-full">
       {pathname === '/' ? (
         <>
-          <div className="flex justify-between items-baseline px-2">
-            <h2 className="subtitle">최근 글</h2>
+          <div className="flex justify-between items-baseline px-2 mb-4">
+            <h2 className="subtitle mb-0">최근 글</h2>
             <Link href="/posts">
-              <span className="text-main-orange text-sm md:text-base cursor-pointer hover:text-main-teal dark:hover:text-white transition-colors">
+              <span className="text-main-orange ds-body-sm cursor-pointer hover:text-main-teal dark:hover:text-white transition-colors">
                 더 보기
               </span>
             </Link>
           </div>
 
-          <div className="w-full flex flex-col space-y-2">
+          <div className="w-full flex flex-col gap-2">
             {articleDatas.slice(0, 10).map((article) => (
               <PostListItem key={article.slug} article={article} />
             ))}
@@ -48,10 +48,10 @@ export default function PostList({ articleDatas }: PostListProps) {
         </>
       ) : (
         <>
-          <div className="flex justify-between items-baseline px-2">
-            <h2 className="subtitle">{`${category ?? 'All'}`}</h2>
+          <div className="flex justify-between items-baseline px-2 mb-4">
+            <h2 className="subtitle mb-0">{`${category ?? 'All'}`}</h2>
           </div>
-          <div className="w-full flex flex-col space-y-2">
+          <div className="w-full flex flex-col gap-2">
             {filteredArticles.map((article) => (
               <PostListItem key={article.slug} article={article} />
             ))}

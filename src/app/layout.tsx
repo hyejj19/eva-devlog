@@ -65,11 +65,11 @@ export default function RootLayout({
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js" />
       </Head>
       <body suppressHydrationWarning>
-        <main className="flex flex-col items-center h-full w-full px-4 lg:px-0">
+        <main className="flex flex-col items-center h-full w-full container-padding">
           <section className="flex flex-col items-center h-full w-full max-w-[900px]">
             <Header />
             {children}
-            <footer className="h-[100px] flex justify-center items-center text-sm text-gray-600 dark:text-gray-400 border-t w-full mt-16">
+            <footer className="h-24 flex justify-center items-center ds-caption ds-text-muted border-t ds-border w-full section-gap">
               ⓒ 2023 parkhyejung All rights reserved.
             </footer>
           </section>

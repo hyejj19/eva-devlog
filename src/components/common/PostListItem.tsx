@@ -15,20 +15,22 @@ export default function PostListItem({ article }: PostListItemProps) {
 
   return (
     <Link href={`/posts/${slug}`}>
-      <div className="w-full flex py-3 px-2 hover:bg-light-teal dark:hover:bg-gray-800 dark:hover:text-main-teal rounded-md items-center cursor-pointer transition-all duration-200 ease-in-out">
+      <div className="w-full flex py-3 px-4 card-hover dark:hover:text-main-teal rounded-md items-center cursor-pointer">
         {pathname === '/' ? (
           <>
-            <span className="text-base">{title}</span>
-            <span className="hidden sm:block ml-auto small-text">{date}</span>
+            <span className="ds-body">{title}</span>
+            <span className="hidden sm:block ml-auto ds-caption ds-text-muted">
+              {date}
+            </span>
           </>
         ) : (
           <>
-            <div className="w-full flex flex-col space-y-3">
-              <div className="flex w-full justify-between small-text">
+            <div className="w-full flex flex-col gap-2">
+              <div className="flex w-full justify-between ds-caption ds-text-muted">
                 <span># {tag}</span>
                 <span className="hidden sm:block">{date}</span>
               </div>
-              <span className="text-base">{title}</span>
+              <span className="ds-body font-medium">{title}</span>
             </div>
           </>
         )}
