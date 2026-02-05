@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Intro() {
   return (
-    <section className="w-full flex items-center mt-24 md:mt-32 animate-fade-in-up">
+    <section className="w-full flex items-center mt-24 md:mt-32">
       <article className="flex items-end w-full gap-4 md:gap-6">
         <Image
           src="/profile_devlog.webp"

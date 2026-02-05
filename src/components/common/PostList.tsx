@@ -28,7 +28,7 @@ export default function PostList({ articleDatas }: PostListProps) {
   }, [category]);
 
   return (
-    <article className="w-full h-full animate-fade-in">
+    <article className="w-full h-full">
       {pathname === '/' ? (
         <>
           <div className="flex justify-between items-baseline px-2 mb-4">
@@ -41,16 +41,8 @@ export default function PostList({ articleDatas }: PostListProps) {
           </div>
 
           <div className="w-full flex flex-col gap-2">
-            {articleDatas.slice(0, 10).map((article, index) => (
-              <div
-                key={article.slug}
-                className="animate-fade-in-up"
-                style={{
-                  animationDelay: `${index * 50}ms`,
-                  animationFillMode: 'both',
-                }}>
-                <PostListItem article={article} />
-              </div>
+            {articleDatas.slice(0, 10).map((article) => (
+              <PostListItem key={article.slug} article={article} />
             ))}
           </div>
         </>
@@ -60,16 +52,8 @@ export default function PostList({ articleDatas }: PostListProps) {
             <h2 className="subtitle mb-0">{`${category ?? 'All'}`}</h2>
           </div>
           <div className="w-full flex flex-col gap-2">
-            {filteredArticles.map((article, index) => (
-              <div
-                key={article.slug}
-                className="animate-fade-in-up"
-                style={{
-                  animationDelay: `${index * 30}ms`,
-                  animationFillMode: 'both',
-                }}>
-                <PostListItem article={article} />
-              </div>
+            {filteredArticles.map((article) => (
+              <PostListItem key={article.slug} article={article} />
             ))}
           </div>
         </>
