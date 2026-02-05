@@ -15,7 +15,7 @@ export default function PostListItem({ article }: PostListItemProps) {
 
   return (
     <Link href={`/posts/${slug}`}>
-      <div className="w-full flex py-3 px-2 hover:bg-light-teal dark:hover:text-main-teal hover:transition-colors rounded-md items-center cursor-pointer">
+      <div className="w-full flex py-3 px-2 hover:bg-light-teal dark:hover:bg-gray-800 dark:hover:text-main-teal rounded-md items-center cursor-pointer transition-all duration-200 ease-in-out">
         {pathname === '/' ? (
           <>
             <span className="text-base">{title}</span>

@@ -28,6 +28,21 @@
   }
 
   .hover-text {
-    @apply hover:text-main-orange cursor-pointer dark:hover:text-main-orange;
+    @apply hover:text-main-orange cursor-pointer dark:hover:text-main-orange
+           transition-colors duration-200 ease-in-out;
+  }
+
+  /* 인터랙티브 요소 기본 스타일 */
+  .interactive {
+    @apply transition-all duration-200 ease-in-out
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-main-orange focus-visible:ring-offset-2
+           dark:focus-visible:ring-offset-deep-gray;
+  }
+
+  /* 카드 호버 효과 */
+  .card-hover {
+    @apply hover:bg-light-teal dark:hover:bg-gray-800
+           transition-all duration-200 ease-in-out;
   }
 }
