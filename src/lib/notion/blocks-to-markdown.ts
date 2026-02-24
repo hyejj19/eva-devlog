@@ -102,7 +102,9 @@ function blockToMarkdown(block: BlockObjectResponse): string {
       if (block.image.type === 'external') {
         imageUrl = block.image.external.url;
       } else if (block.image.type === 'file') {
-        imageUrl = block.image.file.url;
+        // Notion file URLs are signed and expire after ~1 hour.
+        // Use a proxy API route that fetches a fresh URL on each request.
+        imageUrl = `/api/notion-image?blockId=${block.id}`;
       }
       const caption = richTextToPlainText(block.image.caption);
       return `![${caption}](${imageUrl})\n\n`;
