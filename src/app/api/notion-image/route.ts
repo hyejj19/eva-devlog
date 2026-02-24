@@ -13,7 +13,10 @@ export async function GET(request: NextRequest) {
     const block = await notion.blocks.retrieve({ block_id: blockId });
 
     if (!('type' in block) || block.type !== 'image') {
-      return NextResponse.json({ error: 'Block is not an image' }, { status: 404 });
+      return NextResponse.json(
+        { error: 'Block is not an image' },
+        { status: 404 },
+      );
     }
 
     let imageUrl = '';
@@ -24,7 +27,10 @@ export async function GET(request: NextRequest) {
     }
 
     if (!imageUrl) {
-      return NextResponse.json({ error: 'No image URL found' }, { status: 404 });
+      return NextResponse.json(
+        { error: 'No image URL found' },
+        { status: 404 },
+      );
     }
 
     // Redirect to the fresh signed URL
