@@ -98,14 +98,13 @@ function blockToMarkdown(block: BlockObjectResponse): string {
     }
 
     case 'image': {
-      let imageUrl = '';
-      if (block.image.type === 'external') {
-        imageUrl = block.image.external.url;
-      } else if (block.image.type === 'file') {
-        imageUrl = block.image.file.url;
-      }
       const caption = richTextToPlainText(block.image.caption);
-      return `![${caption}](${imageUrl})\n\n`;
+      // external 타입은 만료 없으므로 그대로 사용
+      if (block.image.type === 'external') {
+        return `![${caption}](${block.image.external.url})\n\n`;
+      }
+      // file 타입(Notion 업로드)은 S3 signed URL이 1시간 후 만료됨 → 프록시 경유
+      return `![${caption}](/api/notion-image?blockId=${block.id})\n\n`;
     }
 
     case 'video': {

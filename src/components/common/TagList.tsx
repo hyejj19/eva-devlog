@@ -61,7 +61,7 @@ export default function TagList({ tagList }: TagListProps) {
             <ul className="flex flex-col gap-3 ds-body-sm">
               <li className="hover-text">
                 <Link href="/posts" onClick={() => setIsOpen(false)}>
-                  All ({tagList.length})
+                  All ({tagsWithAmount.length})
                 </Link>
               </li>
               {tagsWithAmount.map(([tag, amount]) => (

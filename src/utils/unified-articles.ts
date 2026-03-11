@@ -82,5 +82,5 @@ export async function getAllArticleSlugs(): Promise<string[]> {
 export async function getUnifiedTagList(): Promise<string[]> {
   const articles = await getAllUnifiedArticles();
   const tags = articles.map((article) => article.tag).filter(Boolean);
-  return [...new Set(tags)]; // 중복 제거
+  return tags;
 }

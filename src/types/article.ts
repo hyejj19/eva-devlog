@@ -4,7 +4,6 @@ export interface IArticleFile {
   date: string;
   updatedDate: string;
   image: string;
-  excerpt: string;
   tag: string;
   content: string;
   // 콘텐츠 소스 구분

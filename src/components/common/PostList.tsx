@@ -14,18 +14,18 @@ type PostListProps = {
 
 export default function PostList({ articleDatas }: PostListProps) {
   const pathname = usePathname();
-  const category = useSearchParams().get('tag');
+  const selectedTag = useSearchParams().get('tag');
 
   const [filteredArticles, setFilteredArticles] = useState(articleDatas);
 
   useEffect(() => {
-    if (category) {
+    if (selectedTag) {
       return setFilteredArticles(
-        articleDatas.filter((article) => article.tag === category),
+        articleDatas.filter((article) => article.tag === selectedTag),
       );
     }
     setFilteredArticles(articleDatas);
-  }, [category]);
+  }, [selectedTag]);
 
   return (
     <article className="w-full h-full">
@@ -49,7 +49,7 @@ export default function PostList({ articleDatas }: PostListProps) {
       ) : (
         <>
           <div className="flex justify-between items-baseline px-2 mb-4">
-            <h2 className="subtitle mb-0">{`${category ?? 'All'}`}</h2>
+            <h2 className="subtitle mb-0">{`${selectedTag ?? 'All'}`}</h2>
           </div>
           <div className="w-full flex flex-col gap-2">
             {filteredArticles.map((article) => (

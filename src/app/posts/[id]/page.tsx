@@ -35,12 +35,16 @@ export async function generateMetadata({
     };
   }
 
+  const description =
+    articleData.content.replace(/[#*`\[\]()>\-~\n]/g, ' ').trim().slice(0, 160) ||
+    articleData.title;
+
   return {
     title: articleData.title,
-    description: articleData.excerpt,
+    description,
     openGraph: {
       title: articleData.title,
-      description: articleData.excerpt,
+      description,
       type: 'article',
       publishedTime: articleData.date,
       images: articleData.image ? [articleData.image] : [],
@@ -48,7 +52,7 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: articleData.title,
-      description: articleData.excerpt,
+      description,
       images: articleData.image ? [articleData.image] : [],
     },
   };

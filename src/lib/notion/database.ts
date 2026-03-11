@@ -37,7 +37,10 @@ function getSelect(page: PageObjectResponse, propName: string): string {
   return '';
 }
 
-function getUrl(page: PageObjectResponse, propName: string): string {
+function getImageUrl(
+  page: PageObjectResponse,
+  propName: string,
+): string {
   const prop = page.properties[propName];
   if (prop?.type === 'url' && prop.url) {
     return prop.url;
@@ -46,7 +49,9 @@ function getUrl(page: PageObjectResponse, propName: string): string {
   if (prop?.type === 'files' && prop.files.length > 0) {
     const file = prop.files[0];
     if (file.type === 'external') return file.external.url;
-    if (file.type === 'file') return file.file.url;
+    // Notion 업로드 이미지는 S3 signed URL(1시간 만료) → 프록시 경유
+    if (file.type === 'file')
+      return `/api/notion-image?pageId=${page.id}&prop=${propName}`;
   }
   return '';
 }
@@ -71,8 +76,7 @@ async function notionPageToArticle(
     title,
     date: getDate(page, 'Date'),
     updatedDate: getDate(page, 'UpdatedDate'),
-    image: getUrl(page, 'Image'),
-    excerpt: getRichText(page, 'Excerpt'),
+    image: getImageUrl(page, 'Image'),
     tag: getSelect(page, 'Tag'),
     content,
     source: 'notion',
