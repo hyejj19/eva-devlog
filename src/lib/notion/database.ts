@@ -37,10 +37,7 @@ function getSelect(page: PageObjectResponse, propName: string): string {
   return '';
 }
 
-function getImageUrl(
-  page: PageObjectResponse,
-  propName: string,
-): string {
+function getImageUrl(page: PageObjectResponse, propName: string): string {
   const prop = page.properties[propName];
   if (prop?.type === 'url' && prop.url) {
     return prop.url;

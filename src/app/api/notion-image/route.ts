@@ -48,10 +48,7 @@ export async function GET(request: NextRequest) {
     }
 
     if (!url) {
-      return NextResponse.json(
-        { error: 'Image not found' },
-        { status: 404 },
-      );
+      return NextResponse.json({ error: 'Image not found' }, { status: 404 });
     }
 
     const imageResponse = await fetch(url);

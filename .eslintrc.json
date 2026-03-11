@@ -60,6 +60,8 @@
     "react/jsx-no-useless-fragment": "off",
     "react/button-has-type": "off",
     "import/no-named-as-default": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
     "no-param-reassign": [
       "error",
       {

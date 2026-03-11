@@ -36,8 +36,10 @@ export async function generateMetadata({
   }
 
   const description =
-    articleData.content.replace(/[#*`\[\]()>\-~\n]/g, ' ').trim().slice(0, 160) ||
-    articleData.title;
+    articleData.content
+      .replace(/[#*`[()\]>\-~\n]/g, ' ')
+      .trim()
+      .slice(0, 160) || articleData.title;
 
   return {
     title: articleData.title,
