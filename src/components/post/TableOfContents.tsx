@@ -77,9 +77,9 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
   };
 
   return (
-    <article className="w-[280px] h-full md:block sticky top-[100px] hidden">
+    <article className="w-[280px] md:block sticky top-[100px] hidden shrink-0 self-start">
       <h2 className="subtitle">Contents</h2>
-      <ul className="flex flex-col gap-2 ds-body-sm pt-2 border-l-2 border-border dark:border-border-dark">
+      <ul className="flex flex-col gap-2 ds-body-sm pt-2 border-l-2 border-border dark:border-border-dark max-h-[calc(100vh-180px)] overflow-y-auto">
         {headings.map((heading) => (
           <li
             className={`-ml-[2px] transition-all duration-200 ${heading.level === 3 ? 'pl-6' : 'pl-4'} ${
