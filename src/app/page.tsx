@@ -8,12 +8,9 @@ import {
   getUnifiedTagList,
 } from '../utils/unified-articles';
 
-// ISR: 1시간마다 재검증
-export const revalidate = 3600;
-
-export default async function Page() {
-  const articleDatas = await getAllUnifiedArticles();
-  const tagList = await getUnifiedTagList();
+export default function Page() {
+  const articleDatas = getAllUnifiedArticles();
+  const tagList = getUnifiedTagList();
 
   return (
     <>

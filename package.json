@@ -7,10 +7,10 @@
     "build": "CI=false next build",
     "start": "next start",
     "lint": "next lint",
+    "sync": "node scripts/sync-notion.mjs",
     "prepare": "husky"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.5",
     "@types/node": "20.8.3",
     "@types/react": "18.2.25",
     "@types/react-dom": "18.2.11",
@@ -21,12 +21,9 @@
     "markdown-to-jsx": "^7.3.2",
     "marked": "^9.1.0",
     "next": "^13.5.11",
-    "notion-client": "^6.16.0",
-    "notion-types": "^6.16.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-notion-x": "^6.16.0",
     "typescript": "5.2.2"
   },
   "lint-staged": {
@@ -36,6 +33,7 @@
     ]
   },
   "devDependencies": {
+    "@notionhq/client": "^2.2.5",
     "@tailwindcss/typography": "^0.5.10",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^6.7.4",

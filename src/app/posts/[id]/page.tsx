@@ -10,12 +10,9 @@ import {
   getAllArticleSlugs,
 } from '../../../utils/unified-articles';
 
-// ISR: 1시간마다 재검증
-export const revalidate = 3600;
-
-// SSG를 위한 정적 경로 생성
-export async function generateStaticParams() {
-  const slugs = await getAllArticleSlugs();
+// SSG: build all known slugs at build time
+export function generateStaticParams() {
+  const slugs = getAllArticleSlugs();
   return slugs.map((slug) => ({
     id: slug,
   }));
@@ -27,7 +24,7 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id: slug } = await params;
-  const articleData = await getUnifiedArticle(slug);
+  const articleData = getUnifiedArticle(slug);
 
   if (!articleData) {
     return {
@@ -66,7 +63,7 @@ export default async function PostPage({
   params: Promise<{ id: string }>;
 }) {
   const { id: slug } = await params;
-  const articleData = await getUnifiedArticle(slug);
+  const articleData = getUnifiedArticle(slug);
 
   if (!articleData) {
     notFound();
