@@ -261,17 +261,28 @@ function escapeYamlString(str) {
   return `'${str}'`;
 }
 
+// Track used filenames to handle duplicate dates
+const usedFilenames = new Set();
+
+function resolveFilename(date) {
+  // Use date as filename (e.g. 2026-01-16), append suffix if duplicate
+  let name = date;
+  let counter = 2;
+  while (usedFilenames.has(name)) {
+    name = `${date}-${counter}`;
+    counter++;
+  }
+  usedFilenames.add(name);
+  return name;
+}
+
 async function syncArticle(page) {
   const title = getTitle(page);
-  const slug = (
-    getRichText(page, 'Slug') ||
-    title ||
-    `notion-${page.id.replace(/-/g, '')}`
-  ).trim();
   const date = getDate(page, 'Date');
   const updatedDate = getDate(page, 'UpdatedDate');
   const tag = getSelect(page, 'Tag');
   const image = await getCoverImageUrl(page);
+  const filename = resolveFilename(date);
 
   // Fetch and convert content
   const blocks = await getAllBlocks(page.id);
@@ -295,12 +306,12 @@ async function syncArticle(page) {
   ].join('\n');
 
   const fileContent = `${frontmatter}\n\n${content}\n`;
-  const filePath = path.join(ARTICLES_DIR, `${slug}.md`);
+  const filePath = path.join(ARTICLES_DIR, `${filename}.md`);
 
   fs.writeFileSync(filePath, fileContent, 'utf-8');
-  console.log(`  + ${slug} (${title})`);
+  console.log(`  + ${filename} (${title})`);
 
-  return slug;
+  return filename;
 }
 
 function cleanupUnpublished(syncedSlugs) {
