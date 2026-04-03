@@ -263,10 +263,11 @@ function escapeYamlString(str) {
 
 async function syncArticle(page) {
   const title = getTitle(page);
-  const slug =
+  const slug = (
     getRichText(page, 'Slug') ||
     title ||
-    `notion-${page.id.replace(/-/g, '')}`;
+    `notion-${page.id.replace(/-/g, '')}`
+  ).trim();
   const date = getDate(page, 'Date');
   const updatedDate = getDate(page, 'UpdatedDate');
   const tag = getSelect(page, 'Tag');
