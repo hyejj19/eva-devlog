@@ -135,6 +135,47 @@ function richTextToPlainText(richText) {
   return richText.map((t) => t.plain_text).join('');
 }
 
+function tableCellToMarkdown(richText) {
+  return richTextToMarkdown(richText)
+    .replaceAll('\n', '<br />')
+    .trim();
+}
+
+function tableCellToHtml(tag, richText) {
+  return `<${tag}>${tableCellToMarkdown(richText)}</${tag}>`;
+}
+
+function tableRowToHtml(cells, cellTags) {
+  return `<tr>${cells
+    .map((cell, index) => tableCellToHtml(cellTags[index], cell))
+    .join('')}</tr>`;
+}
+
+async function tableToMarkdown(block) {
+  const rows = (await getAllBlocks(block.id)).filter(
+    (child) => child.type === 'table_row',
+  );
+
+  if (rows.length === 0) return '';
+
+  const tableWidth = block.table.table_width || rows[0].table_row.cells.length;
+  const hasColumnHeader = block.table.has_column_header;
+  const hasRowHeader = block.table.has_row_header;
+  const columnHeaderTags = Array.from({ length: tableWidth }, () => 'th');
+  const bodyTags = Array.from({ length: tableWidth }, (_, index) =>
+    hasRowHeader && index === 0 ? 'th' : 'td',
+  );
+  const headerRow = hasColumnHeader
+    ? `<thead>${tableRowToHtml(rows[0].table_row.cells, columnHeaderTags)}</thead>`
+    : '';
+  const bodyRows = hasColumnHeader ? rows.slice(1) : rows;
+  const body = bodyRows
+    .map((row) => tableRowToHtml(row.table_row.cells, bodyTags))
+    .join('');
+
+  return `<table>${headerRow}<tbody>${body}</tbody></table>\n\n`;
+}
+
 async function blockToMarkdown(block) {
   switch (block.type) {
     case 'paragraph': {
@@ -173,6 +214,10 @@ async function blockToMarkdown(block) {
         ? `![${caption}](${localPath})\n\n`
         : `![${caption}](${block.image.file.url})\n\n`;
     }
+    case 'table':
+      return tableToMarkdown(block);
+    case 'table_row':
+      return '';
     case 'video': {
       const videoUrl =
         block.video.type === 'external'
